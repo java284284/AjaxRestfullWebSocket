@@ -1,0 +1,13 @@
+<!-- 
+於要控管之專案的/webapp/META-INF/context.xml定義realm，加入下面標籤
+-->
+<Realm  className="org.apache.catalina.realm.JDBCRealm" digest="MD5"
+   driverName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+   connectionURL="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=jspdb"
+   connectionName="sa"
+   connectionPassword="sa123456"
+   userTable="users" 
+   userNameCol="username" 
+   userCredCol="password"
+   userRoleTable="user_roles" 
+   roleNameCol="role_name" />

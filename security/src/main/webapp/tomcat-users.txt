@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomcat-users>
+    <role rolename="supervisor" />
+	<role rolename="agent" />
+	<user username="kitty" roles="supervisor"        
+          password="pswd123" />
+	<user username="snoopy" roles="supervisor, agent" 
+	      password="pswd123" />
+	<user username="micky" roles="agent" 
+	      password="pswd123" />
+</tomcat-users>

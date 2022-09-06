@@ -1,0 +1,8 @@
+<!-- 
+   於要控管之專案的/webapp/META-INF/context.xml定義Realm，
+   只需要加入下面一列 
+-->
+   <Realm className="org.apache.catalina.realm.MemoryRealm" />
+ 
+
+

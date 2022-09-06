@@ -1,0 +1,3 @@
+kitty|張君雅|kitty@gmail.com|1980-12-20|57.2|5|3|F|data/images/kitty.jpg
+mickey|米小薯|mickey@gmail.com|1985-02-17|75.0|2|1|M|data/images/micky.jpg
+snoopy|溫奴比|snoopy@gmail.com|1979-07-05|66.5|1|6|M|data/images/snoopy.png

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?> 
+<Context displayName="JSP Servlet Example" docBase="example" path="/example" reloadable="true">
+  <!--               SQLServer(範例程式會用到的DataSource)       -->
+  <Resource name="jdbc/MemberDataBase" type="javax.sql.DataSource"
+      username="sa" password="sa123456"
+      driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+      url="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=JSPDB"
+      maxActive="8"
+      maxIdle="4"
+      maxWait="5000"
+  />
+  <Resource name="jdbc/MemberDataBaseSQLServer" type="javax.sql.DataSource"
+      username="sa" password="sa123456"
+      driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+      url="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=JSPDB"
+      maxActive="8"
+      maxIdle="4"
+      maxWait="5000"
+  />    
+  <!--              MySQL(範例程式會用到的DataSource)              -->
+  <!-- 
+  <Resource name="jdbc/MemberDataBase" type="javax.sql.DataSource"
+      username="root" password=""
+      driverClassName="com.mysql.jdbc.Driver"
+      url="jdbc:mysql://127.0.0.1:3306/jspdb"
+      connectionProperties="useUnicode=yes;characterEncoding=utf8;"
+      maxActive="8"
+      maxIdle="4"
+      maxWait="5000" 
+    />
+  -->
+<Realm  className="org.apache.catalina.realm.JDBCRealm" 
+   driverName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+   connectionURL="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=jspdb"
+   connectionName="sa"
+   connectionPassword="1234"
+   userTable="users" 
+   userNameCol="username" 
+   userCredCol="password"
+   userRoleTable="user_roles" 
+   roleNameCol="role_name" >
+   
+   <CredentialHandler className="org.apache.catalina.realm.MessageDigestCredentialHandler"
+          algorithm="SHA-384"
+          iterations="1"
+          saltlenght="0" />
+   
+   </Realm>
+
+ 
+   
+</Context>

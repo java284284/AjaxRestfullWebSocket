@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>Archetype Created Web Application</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<context-param>
+		<param-name>dataPath</param-name>
+		<param-value>/WEB-INF/data/CoffeeData.txt</param-value>
+	</context-param>
+	<context-param>
+		<param-name>adminEmail</param-name>
+		<param-value>helloSnoopy@helloSnoopy.com</param-value>
+	</context-param>
+	<context-param>
+		<param-name>breed</param-name>
+		<param-value>Great Dane大丹(測試中文)</param-value>
+	</context-param>
+	<servlet>
+		<servlet-name>Lottery1</servlet-name>
+		<servlet-class>ch07.ex02.controller.LotteryServlet</servlet-class>
+		<init-param>
+			<param-name>maxNumber</param-name>
+			<param-value>49</param-value>
+		</init-param>
+		<init-param>
+			<param-name>amountOfBalls</param-name>
+			<param-value>6</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Lottery1</servlet-name>
+		<url-pattern>/ch07/BigLottery.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Lottery2</servlet-name>
+		<servlet-class>ch07.ex02.controller.LotteryServlet</servlet-class>
+		<init-param>
+			<param-name>maxNumber</param-name>
+			<param-value>39</param-value>
+		</init-param>
+		<init-param>
+			<param-name>amountOfBalls</param-name>
+			<param-value>5</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Lottery2</servlet-name>
+		<url-pattern>/ch07/SmallLottery.do</url-pattern>
+	</servlet-mapping>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/ExceptionHandler</location>
+	</error-page>
+	<error-page>
+		<exception-type>javax.servlet.ServletException</exception-type>
+		<location>/ExceptionHandler</location>
+	</error-page>
+	<error-page>
+		<exception-type>java.lang.RuntimeException</exception-type>
+		<location>/ExceptionHandler</location>
+	</error-page>
+	<resource-ref>
+		<description>DB Connection</description>
+		<res-ref-name>jdbc/MemberDataBase</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+	<resource-ref>
+		<description>DB Connection</description>
+		<res-ref-name>jdbc/securitydb</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+	<filter-mapping>
+		<filter-name>F1</filter-name>
+		<url-pattern>/ch08/hello</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>F3</filter-name>
+		<servlet-name>HelloWorldServlet</servlet-name>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>F7</filter-name>
+		<url-pattern>/ch08/hello</url-pattern>
+	</filter-mapping>
+	
+</web-app>

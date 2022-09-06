@@ -1,0 +1,10 @@
+<!-- 在context.xml(或server.xml內)定義realm -->
+
+<Realm className="org.apache.catalina.realm.DataSourceRealm"
+   localDataSource="true"
+   dataSourceName="jdbc/jspdb"
+   userTable="users" 
+   userNameCol="username" 
+   userCredCol="password"
+   userRoleTable="user_roles" 
+   roleNameCol="role_name" />

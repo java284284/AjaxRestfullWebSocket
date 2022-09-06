@@ -1,0 +1,5 @@
+<Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+    maxThreads="150" SSLEnabled="true" scheme="https" secure="true" 
+    keystoreFile="C:\_JSP\temp\.keystore"
+    keystorePass="changeit"
+clientAuth="false"  sslProtocol="TLS" />

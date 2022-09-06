@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   在Server專案/Tomcat v9.0 Server at localhost-config/tomcat-users.xml
+   內定義roles, users, passwords的步驟: 
+   1. 啟動Eclipse
+   2. 打開Server專案下的Tomcat v9.0 Server at localhost-config資料夾
+   3. 開啟tomcat-users.xml
+   4. 找到<tomcat-users>標籤
+   5. 將該檔的內容置換為下列標籤   
+-->
+<tomcat-users>
+	<role rolename="employee" />
+	<role rolename="manager" />
+	<role rolename="admin" />
+	<user username="tomcat" roles="employee" password="mr123" />
+	<user username="john" roles="employee,admin" password="mr123" />
+	<user username="mary" roles="admin" password="mr123" />
+</tomcat-users>

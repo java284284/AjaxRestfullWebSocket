@@ -1,0 +1,18 @@
+好久不見!!!
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type='text/javascript'>
+var url='http://localhost:8080/security/_04/orderSelect.do';
+var url2='http://localhost:8080/security/_04/orderDelete.do';
+$.getJSON(url, null, show);
+function show(data){
+    console.log(data);
+	var firstKey = data[0].key;      // 第一筆訂單的key
+	//alert(firstKey);
+	//alert(JSON.stringify(data[0]));  // 顯示第一筆訂單
+	var obj = {
+		id: firstKey	
+	}
+	$.getJSON(url2, obj);
+}
+</script>
+有空時一起吃飯，聊天

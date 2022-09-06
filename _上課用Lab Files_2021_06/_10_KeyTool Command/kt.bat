@@ -1,0 +1,1 @@
+keytool -genkey -alias tomcat -keyalg RSA -keysize 2048  -keystore c:\_JSP\temp\.keystore

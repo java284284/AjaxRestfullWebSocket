@@ -1,0 +1,13 @@
+<Connector 
+   clientAuth="false" port="8443" 
+   protocol="org.apache.coyote.http11.Http11NioProtocol"
+   minSpareThreads="5" maxSpareThreads="75"
+   enableLookups="true" disableUploadTimeout="true"
+   acceptCount="100" maxThreads="200"
+   scheme="https" secure="true" SSLEnabled="true"
+   keystoreFile="c:\_JSP\temp\server.jks"
+   keystoreType="JKS" keystorePass="password"
+   truststoreFile="c:\_JSP\temp\server.jks"
+   truststoreType="JKS" truststorePass="password"
+   SSLVerifyClient="require" SSLEngine="on" SSLVerifyDepth="2" sslProtocol="TLS" 
+/>

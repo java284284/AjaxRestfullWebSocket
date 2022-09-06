@@ -1,0 +1,48 @@
+<!-- 在example專案下的webapp/WEB-INF/web.xml內定義受控管的資源 -->
+<security-constraint> 
+	<web-resource-collection> 
+		<web-resource-name>UpdateRecipes</web-resource-name>
+		<url-pattern>/ch01/*</url-pattern>
+		<url-pattern>/ch02/*</url-pattern>
+		<url-pattern>/ch04/ex01/*</url-pattern>
+		<url-pattern>/ch04/ex03/*</url-pattern>
+		<http-method>POST</http-method> <http-method>GET</http-method>
+		<http-method>PUT</http-method>  <http-method>DELETE</http-method>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>manager</role-name> 
+		<role-name>employee</role-name>
+	</auth-constraint>
+	<user-data-constraint>
+		<transport-guarantee>NONE</transport-guarantee>
+	</user-data-constraint>
+</security-constraint>
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>UpdateRecipes</web-resource-name>
+		<url-pattern>/ch07/*</url-pattern>
+		<url-pattern>/ch08/*</url-pattern>
+		<http-method>PUT</http-method>
+	    <http-method>DELETE</http-method>
+		<http-method>POST</http-method>
+		<http-method>GET</http-method>
+	</web-resource-collection>
+	<auth-constraint>
+		<role-name>admin</role-name>
+	</auth-constraint>
+	<user-data-constraint>
+		<transport-guarantee>NONE</transport-guarantee>
+	</user-data-constraint>
+</security-constraint>
+<login-config>
+		<auth-method>BASIC</auth-method>
+</login-config>
+<security-role>
+	<role-name>admin</role-name>
+</security-role>
+<security-role>
+	<role-name>manager</role-name>
+</security-role>
+<security-role>
+	<role-name>employee</role-name>
+</security-role>

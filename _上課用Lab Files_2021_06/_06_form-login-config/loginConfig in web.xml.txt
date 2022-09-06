@@ -1,0 +1,16 @@
+<!--
+  將web.xml檔案內的
+  <login-config>
+		<auth-method>BASIC</auth-method>
+  </login-config>
+  置換為下列的	<login-config>標籤
+  
+  此外，要將login.jsp與error.jsp複製到專案的webapp下的_20資料夾
+-->
+<login-config>
+	<auth-method>FORM</auth-method>
+	<form-login-config>
+		<form-login-page>/_20/login.jsp</form-login-page>
+		<form-error-page>/_20/error.jsp</form-error-page>
+	</form-login-config>
+</login-config>

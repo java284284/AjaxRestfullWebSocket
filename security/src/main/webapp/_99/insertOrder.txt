@@ -1,0 +1,30 @@
+貴公司產品物美價廉
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type='text/javascript'>
+var amt = Math.floor(Math.random() * 5000) / 10.0; 
+var url='http://localhost:8080/security/_04/orderInsert.do';
+var obj = {
+	id: 'X55001',
+	amt: amt
+};
+$.post(url, obj);
+</script>如題
+
+
+貴餐廳食物難吃，超貴，一顆星
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type='text/javascript'>
+var no = Math.floor(Math.random() * 500000); 
+var weight = no / 10000.0 + 30; 
+var url='http://localhost:9090/jspExercise/ch02/member.do';
+var obj = {
+'mId': 'A11' + no,
+'pswd': 'Do!ng1234',
+'mName': '張君雅',
+'mAddress': '新竹市',
+'mPhone': '0919-123456',
+'mBirthday': '1999-12-25',
+'mWeight': weight
+};
+$.post(url, obj);
+</script>如題

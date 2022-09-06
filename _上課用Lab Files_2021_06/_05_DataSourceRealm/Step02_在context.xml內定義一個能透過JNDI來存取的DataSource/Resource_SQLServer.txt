@@ -1,0 +1,9 @@
+<!-- 在context.xml定義 Resource 標籤 -->
+<Resource name="jdbc/jspdb" type="javax.sql.DataSource"
+	username="sa" 
+	password="sa123456" 
+	driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+	url="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=JSPDB" 
+	maxActive="8"
+	maxIdle="4" 
+	maxWait="5000" />

@@ -1,0 +1,6 @@
+101, ColombianSQL,          5.5, 1.00
+ 49, French_RoastSQL,       8.4, 0.85
+150, EspressoSQL,           14.5, 1.00
+101, Colombian_DecafSQL,    6.7, 0.75
+147, French_Roast_DecafSQL, 10.4, 1.00
+249, 雲林谷坑極品咖啡,      12.3, 1.00

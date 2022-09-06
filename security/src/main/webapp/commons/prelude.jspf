@@ -1,0 +1,14 @@
+﻿<%@ page contentType="text/html; charset=UTF-8" session="false"%>
+<center>
+<table border="0"  width="95%">
+<tr>
+<td>
+<h2>此為Prelude<br>
+JSP 徹底研究</h2>
+
+<hr>
+<br>
+</TD>
+</TR>
+</TABLE>
+</CENTER>

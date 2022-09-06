@@ -1,0 +1,68 @@
+http://www.thejavageek.com/2013/07/07/configure-jdbcrealm-jaas-for-mysql-and-tomcat-7-with-form-based-authentication/
+
+
+在Tomcat中使用JDBCRealm來進行身分驗證功能
+
+1. 在MySQL中建立資料庫(securitydb)與users與user_roles表格。
+   users表格含有帳號(username)與密碼(password)兩欄位，
+   user_roles表格含有帳號(username)與角色(role_name)兩欄位，
+   這兩個表格都可以有其它的欄位。
+   
+進入mysql視窗，執行createdb.sql
+   mysql>source d:/適當的目錄/createdb.sql 
+   注意：請用正斜線，如果是反斜線請輸入兩個\\
+   mysql>source d:\\適當的目錄\\createdb.sql 
+   
+2.替資料庫建立一個JNDI named來存取的DataSource。
+<Resource name="jdbc/jspdb" type="javax.sql.DataSource"
+      username="root" password="password"
+      driverClassName="com.mysql.jdbc.Driver"
+      url="jdbc:mysql://127.0.0.1:3306/test"
+      connectionProperties="useUnicode=yes;characterEncoding=utf8;"
+      maxActive="8"
+      maxIdle="4"
+      maxWait="5000"
+  />   
+3 新增<Realm>標籤
+   %CATALINA_BASE%/conf/server.xml
+   或 META-INF\context.xml
+<Realm className="org.apache.catalina.realm.DataSourceRealm"
+   localDataSource="true"
+   dataSourceName="jdbc/jspdb"
+   userTable="users" 
+   userNameCol="username" 
+   userCredCol="password"
+   userRoleTable="user_roles" 
+   roleNameCol="role_name" />
+   
+4. 將JDBC驅動程式(mysql-connector-java.jar)放入 
+   %CATALINA_BASE%/lib內。
+   
+   
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form method=post action="j_security_check">
+		<p>
+			<span>Username:</span> <br /> <input type="text" name="j_username">
+		</p>
+		<p>
+			<span>Password:</span> <br /> <input type="password"
+				name="j_password">
+		</p>
+		<p>
+			<input type="submit" value="Login">
+		</p>
+	</form>
+
+
+</body>
+</html>   
+

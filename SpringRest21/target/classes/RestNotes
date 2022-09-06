@@ -1,0 +1,16 @@
+produces: 說明傳回值的MIME型態
+consumes： 指定处理请求的提交内容类型（Content-Type）
+
+HTTP Status 406 – Not Acceptable
+The target resource does not have a current representation that would be acceptable to the user agent, according to the proactive negotiation header fields received in the request, and the server is unwilling to supply a default representation
+
+Server無法滿足客戶端提要求的資源。有此資源，但是無法滿足資源的型態。
+
+return "redirect:/_02/mscv/members"; 不能有空白,
+如果redirect:之後跟著一個斜線開頭的字串，此字串被解釋為相對於應用系統根目錄
+如：return "redirect:/_02/mscv/members"; 
+
+如果redirect:之後跟著一個空白字元，接著是一個斜線開頭的字串，此字串被解釋為相對於文件根目錄(Document Root)
+必須要是下面的寫法才可正確執行。
+return "redirect: " + req.getContextPath() + "/_01/mscv/members";
+         

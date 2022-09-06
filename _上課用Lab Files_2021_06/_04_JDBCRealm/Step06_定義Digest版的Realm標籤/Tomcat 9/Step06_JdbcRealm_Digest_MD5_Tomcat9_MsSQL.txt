@@ -1,0 +1,18 @@
+<Realm  className="org.apache.catalina.realm.JDBCRealm" 
+   driverName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+   connectionURL="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=jspdb"
+   connectionName="sa"
+   connectionPassword="sa123456"
+   userTable="users" 
+   userNameCol="username" 
+   userCredCol="password"
+   userRoleTable="user_roles" 
+   roleNameCol="role_name" >
+   
+   <CredentialHandler className="org.apache.catalina.realm.MessageDigestCredentialHandler"
+          algorithm="MD5"
+          iterations="1"
+          saltlenght="0" />
+   
+   </Realm>
+

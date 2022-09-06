@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomcat-users>
+    <role rolename="employee" />
+	<role rolename="manager" />
+	<role rolename="admin" /> 
+	<!--  mr456  -->
+	<user username="tomcat2" roles="employee"        
+          password="2635e9bbbbac32f9d4b40be4c2bb05a2" />
+	<user username="john2" roles="employee,admin" 
+	      password="2635e9bbbbac32f9d4b40be4c2bb05a2" />
+	<user username="mary2" roles="admin" 
+	      password="2635e9bbbbac32f9d4b40be4c2bb05a2" />
+</tomcat-users>

@@ -1,0 +1,36 @@
+body { 
+  background-color: #e1efbb;
+  font-family: verdana;
+  font-size: 25pt;
+}
+  
+.center { margin-left: auto;
+          margin-right: auto;
+          margin-top: 3px;
+          margin-bottom: 3px;
+          text-align: center; }
+.center > div, .center > table /* insert any other block-level elements here */ {
+    margin-left: auto;
+    margin-right: auto;
+}   
+
+td { 
+  font-family: verdana;
+  font-size: 14pt;
+} 
+
+legend {
+	font-weight: bold;
+	color: black;
+	background-color: white;
+	border: 1px solid #cccccc;
+	padding: 4px 2px;
+}
+
+fieldset {
+	font-weight: bold;
+	color: black;
+	background-color: #ffffcc;
+	border: 1px solid #cccccc;
+	padding: 4px 2px;
+}
